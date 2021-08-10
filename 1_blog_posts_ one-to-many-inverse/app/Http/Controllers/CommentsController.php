@@ -51,7 +51,7 @@ class CommentsController extends Controller
         // relatia , legatura intre tabela  post si coment
         // adauga postarii curente un comentariu sau mai multe
         $comment->post()->associate($post);
-        //
+        //folosim o relatie definita in model
         // ->assocaitate() pune in legatura comentariu cu postare
         //salveaza in baza de date
         $comment->save();
