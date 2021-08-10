@@ -16,6 +16,8 @@ class Comment extends Model
 
     public function post()
     {
+        // leaga tabelul Coments de Postare print metoda belongs
         return $this->belongsTo(Post::class);
+        // metoda belongsTo "2 clase sunt dependente una de alta"
     }
 }
