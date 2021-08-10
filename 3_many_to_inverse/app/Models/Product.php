@@ -13,6 +13,7 @@ class Product extends Model
 
     public function categories()
     {
+        //relatoe inversa dintre produs si categorie
         return $this->belongsToMany(Category::class, 'category_product', 'product_id', 'category_id');
     }
 }
