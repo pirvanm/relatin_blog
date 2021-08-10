@@ -22,6 +22,8 @@ class User extends Authenticatable
 
     public function phone()
     {
+        // un utilizator poate avea un singur numar de telefon, 
+        // limitam asta folosind relatia hasOne
         return $this->hasOne(Phone::class);
     }
 
