@@ -48,8 +48,12 @@ class CommentsController extends Controller
         $comment = new Comment();
         $comment->name = $request->name;
         $comment->description = $request->description;
-
+        // relatia , legatura intre tabela  post si coment
+        // adauga postarii curente un comentariu sau mai multe
         $comment->post()->associate($post);
+        //
+        // ->assocaitate() pune in legatura comentariu cu postare
+        //salveaza in baza de date
         $comment->save();
 
         return back()->with('success', 'The comment has been created.');
