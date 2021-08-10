@@ -51,11 +51,17 @@ class UsersController extends Controller
         $phone = new Phone();
         $phone->phone = $request->phone;
         // cand cream un utilizator , ii atribuim si un numar de telefon
-        $phone->user()->associate($user);
+        
+        //user () definita in modelul phone
+        $phone->user()
+        ->associate($user);
+// se foloste in controller 
+        //
         // folosind adaugam un utilizator, populam si tabelul phone
         $phone->save();
-
-        return back()->with('success', 'The user has been created.');
+// folosim save () pentru salva in baza de date
+        return back()->with('success', 
+        'The user has been created.');
     }
 
     /**

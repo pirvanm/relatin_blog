@@ -17,7 +17,9 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::get();
-
+        // Product::where( '')
+//->get() 
+        dd($products);
         return view('products.index', compact('products'));
     }
 
@@ -47,6 +49,7 @@ class ProductsController extends Controller
             'categories' => 'required',
         ]);
 
+        // afiseaza toate categoriile 
         foreach ($request->categories as $category) {
             $category = Category::findOrFail($category);
         }
@@ -58,6 +61,7 @@ class ProductsController extends Controller
 
         $product->categories()->attach($request->categories);
 
+      
         return back()->with('success', 'The product has been created.');
     }
 
