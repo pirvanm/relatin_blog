@@ -15,6 +15,7 @@ class Post extends Model
 
     public function comments()
     {
+        // has Many poate avea mai multe 
         return $this->hasMany(Comment::class);
     }
 }

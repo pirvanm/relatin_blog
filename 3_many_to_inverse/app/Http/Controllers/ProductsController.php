@@ -18,10 +18,12 @@ class ProductsController extends Controller
     {
         $products = Product::get();
         // Product::where( '')
+        // with () , 
 //->get() 
         dd($products);
         return view('products.index', compact('products'));
     }
+    return view('products.index', compact('products'));
 
     /**
      * Show the form for creating a new resource.
